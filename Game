@@ -1,0 +1,98 @@
+#Game Development: Snake Water Gun
+#This game is made by Devansh Shrivastava
+print("Welcome to the game:Snake Water Gun")
+print("Press 's' for snake" )
+print("Press 'w' for water" )
+print("Press 'g' for gun" )
+
+
+us = 0
+cs = 0
+
+a = 1
+
+while(True):
+    i = 0
+    print("Enter number of rounds you want to play: ")
+    n = int(input())
+    while(i<n):
+        import random as rd
+        cc = rd.choice(["s", "w", "g"])
+        print("\nRound",i+1)
+        print("Your Turn")
+        u = input()
+        if u=="s" and cc=="w" or u == "w" and cc == "g" or u == "g" and cc == "s":
+            us = us + 1
+        if u == "s" and cc == "g" or u == "w" and cc == "s" or u == "g" and cc == "w":
+            cs = cs + 1
+        # if u == cc:
+        #     us = us
+        if u == cc :
+            print("Computer chooses the SAME")
+            print("It's draw")
+            print("Your Score",us)
+            print("Computer Score",cs)
+
+        elif u =="s" and cc=="w":
+            print("Computer chose WATER")
+            print("congrats! You won this round")
+            print("Your Score",us)
+            print("Computer Score", cs)
+
+        elif u == "s" and cc == "g":
+            print("Computer chose GUN")
+            print("Ohh! You loss this round")
+            print("Your Score", us)
+            print("Computer Score", cs)
+
+        elif u == "w" and cc == "g":
+            print("Computer chose GUN")
+            print("congrats! You won this round")
+            print("Your Score", us )
+            print("Computer Score", cs)
+
+        elif u == "w" and cc == "s":
+            print("Computer chose SNAKE")
+            print("Ohh! You loss this round")
+            print("Your Score", us)
+            print("Computer Score", cs )
+
+        elif u == "g" and cc == "s":
+            print("Computer chose SNAKE")
+            print("congrats! You won this round")
+            print("Your Score", us )
+            print("Computer Score", cs)
+
+        elif u == "g" and cc == "w":
+            print("Computer chose WATER")
+            print("Ohh! You loss this round")
+            print("Your Score", us)
+            print("Computer Score", cs)
+
+        else :
+            print("Error: Invalid Choice")
+            i = i-1
+
+        i = i + 1
+
+    print("\nn rounds are over")
+    print("\nYour Wons: ",us)
+    print("Computer Wons: ",cs)
+    print("\n")
+    if us == cs:
+        print("The Game is Draw: Well Played")
+
+    elif us>cs :
+        print("Congratulations! You won the game: You are a Brilliant Gamer")
+
+    else :
+        print("You loss: Better luck next time")
+    print("\nDo you want to play again?")
+    print("'Press any natural number' for YES and '0' for NO")
+    a = int(input())
+    if a==1:
+        continue
+    elif a==0:
+        print("Thanks for playing!!!")
+        print("GAME OVER")
+        break
